@@ -5,7 +5,7 @@ mount_dict = {1: "Зима", 2: "Зима", 3: "Весна", 4: "Весна", 5:
               9: "Осень", 10: "Осень", 11: "Осень", 12: "Зима"}
 while True:
     if not mount.isdigit():
-        mount = input("Введите число- ааномер месяца:")
+        mount = input("Введите число- номер месяца:")
     elif 1 > int(mount) or int(mount) > 12:
         mount = input("Введите номер месяца  от 1 до 12:")
     else:
