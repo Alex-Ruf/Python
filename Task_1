@@ -1,9 +1,12 @@
 def number(a, b):
-    if b == 0:
+    try:
+        print(f"Result : {round((int(a) / int(b)),3)}")
+
+    except ZeroDivisionError:
         print("cannot be divided by 0")
-    else:
-        print(f"Result : {(a / b):.3f}")
+    except ValueError:
+        print("Input number: ")
 
 
 while True:
-    number(int(input("Input numerator: ")), int(input("Input denominator: ")))
+    number(input("Input numerator: "), input("Input denominator: "))
