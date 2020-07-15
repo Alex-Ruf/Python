@@ -1,6 +1,0 @@
-user_list = input("Введите любые данные через пробел:")
-for ind, i in enumerate(user_list.split()):
-    if len(i) > 10:
-        print(ind + 1, i[:10])
-    else:
-        print(ind + 1, i)
