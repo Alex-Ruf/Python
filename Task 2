@@ -1,5 +1,6 @@
-def my_list(a, tel, name, year_b, email, city='moscow'):
-    print(F'{name} {a} {city} {year_b} {tel} {email}')
+def my_list(lastname, tel, name, year_br, email, city):
+    print(F'{name} {lastname} {city} {year_br} {tel} {email}')
 
 
-my_list(input("Lastname: "), input("tel:"), name=input("Name : "), year_b=input("Age: "), email=input("email: "))
+my_list(name=input("Name : "), lastname=input("Lastname: "), year_br=input("Year of birth: "), city=input("City: "),
+        tel=input("Tel:"), email=input("email: "))
