@@ -1,0 +1,8 @@
+def my_func(a, b, c):
+    try:
+        return sum([int(a), int(b), int(c)]) - min([int(a), int(b), int(c)])
+    except ValueError:
+        print("Input number!!!")
+
+
+print(my_func(input("Input number: "), input("Input number: "), input("Input number: ")))

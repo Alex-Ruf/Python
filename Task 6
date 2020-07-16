@@ -1,0 +1,18 @@
+def int_func(text):
+    for i in (text.replace(" ", '')):
+
+        if ord(i) < 97 or ord(i) > 122:
+            return (f"Errore - {i} - input latin letters in lower case")
+            break
+
+    return text.title()
+
+
+print("Exit the program print- Exit")
+
+while True:
+    text = (input("Input text: "))
+    if text.title() == 'Exit':
+        break
+
+    print(f"Output text: {int_func(text)}")

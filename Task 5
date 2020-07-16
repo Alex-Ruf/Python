@@ -1,0 +1,16 @@
+my_list = []
+while True:
+    try:
+
+        for i in input("Input number: ").split():
+            if i.isdigit():
+                my_list.append(int(i))
+            elif i.upper() == 'Q':
+                print(f'Result - {sum(my_list)}\n Exit the program')
+                exit()
+            else:
+                print(f"{i} - ERROR - not a number:")
+        print(f'Result - {sum(my_list)}')
+
+    except ValueError:
+        print("ERROR-Input number:")
