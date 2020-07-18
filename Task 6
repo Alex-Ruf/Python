@@ -1,0 +1,27 @@
+from itertools import count, cycle
+
+
+def gen_num(a, b):
+    m = []
+    for el in count(a):
+        if el > b:
+            return m
+        else:
+            m.append(el)
+    print(m)
+
+
+def cycl_num(a, b):
+    с = 0
+    m = []
+    for el in cycle(a):
+        if с > b:
+            return m, f'The list is printed {b} times'
+        m.append(el)
+        с += 1
+
+
+gen = gen_num(3, 10)
+
+print(gen)
+print(cycl_num(gen, 40))
