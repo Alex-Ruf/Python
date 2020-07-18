@@ -1,0 +1,10 @@
+from functools import reduce
+
+
+def product(a, b):
+    return a * b
+
+
+my_list = list(i for i in range(100, 1001, 2))
+print("Source: ", my_list)
+print("Result: ", reduce(product, my_list))
