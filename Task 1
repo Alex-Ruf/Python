@@ -1,0 +1,9 @@
+from sys import argv
+
+
+def salary():
+    name, clock, rate, premium = argv
+    return int(clock) * int(rate) + int(premium)
+
+
+print(f"Your salary {salary()}")
