@@ -1,0 +1,8 @@
+with open("word.txt", "a+", encoding='utf-8') as f:
+    while True:
+        my_str = input('Enter words: ')
+        if my_str == "":
+            print("END")
+            break
+        else:
+            f.write(f'{my_str}\n')
