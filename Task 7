@@ -1,0 +1,13 @@
+import json
+
+with open('text_7.txt', 'r', encoding='utf-8') as f:
+    my_dict = {}
+    for _ in f:
+        my_dict[_.split()[0]] = int(_.split()[2]) - int(_.split()[3])
+
+    total = [int(my_dict[i]) for i in my_dict if my_dict[i] > 0]
+    profit = {"average_profit": sum(total) / len(total)}
+
+data = ([my_dict, profit])
+with open("my_file.json", 'w', encoding='utf-8') as write_f:
+    json.dump(data, write_f, sort_keys=True, indent=4, ensure_ascii=False)

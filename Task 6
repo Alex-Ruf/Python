@@ -1,0 +1,5 @@
+import re
+
+with open("text_6.txt", "r", encoding='utf-8') as f:
+    for _ in f:
+        print({(_.split()[0]): sum([int(_) for _ in (re.findall(r'\d+', _))])})
