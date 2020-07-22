@@ -4,6 +4,5 @@ with open('num.txt', "a+", encoding='utf-8') as f:
     for _ in [randint(0, 100) for _ in range(10)]:
         f.write(str(_) + " ")
     f.seek(0)
-
     total = sum(map(int, f.readline().split()))
     print(f'Sum - {total}')
