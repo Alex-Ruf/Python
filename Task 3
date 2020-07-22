@@ -1,0 +1,10 @@
+with open("text_3.txt", "r", encoding='utf-8') as f:
+    total = 0
+    count_str = (len(f.readlines()))
+    f.seek(0)
+    for _ in f:
+        a = _.split()
+        total += (float(a[1]))
+        if float(a[1]) < 20000:
+            print(_, end="")
+    print(f"Total-  {total / count_str}")
