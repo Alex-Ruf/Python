@@ -1,0 +1,14 @@
+class Road():
+
+    def __init__(self, length, width, height):
+        self._length = length
+        self._width = width
+        self._height = height
+        self._netto = 25
+
+    def result(self):
+        print("Total(tonn): " + str((self._length * self._height * self._width * self._netto) / 1000))
+
+
+road1 = Road(5000, 20, 5)
+road1.result()

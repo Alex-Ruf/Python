@@ -1,0 +1,65 @@
+import turtle
+from time import sleep
+
+
+class TrafficLight:
+    __color = ["red", "yellow", "green"]
+
+    def clock(self):
+        for n in range(self):
+            turtle.write(self - n, align="center", font=("Arial", 35, "normal"))
+            turtle.undo()
+            sleep(1)
+
+    def running(self):
+        turtle.penup()
+        backcolor = turtle.color("black", "white")
+        turtle.pensize(5)
+        turtle.setpos(-55, 55)
+        turtle.pendown()
+        turtle.begin_fill()
+        turtle.setpos(55, 55)
+        turtle.setpos(55, -255)
+        turtle.setpos(-55, -255)
+        turtle.setpos(-55, 55)
+        turtle.end_fill()
+
+        turtle.penup()
+        while turtle.onscreenclick:
+            turtle.setpos(0, 0)
+            turtle.penup()
+            turtle.hideturtle()
+            turtle.dot(100, TrafficLight.__color[0])
+            turtle.setpos(0, -20)
+            TrafficLight.clock(7)
+
+            turtle.setpos(0, 0)
+            turtle.dot(100, "white")
+
+            turtle.setpos(0, -100)
+            turtle.dot(100, TrafficLight.__color[1])
+            turtle.setpos(0, -120)
+            TrafficLight.clock(2)
+            turtle.setpos(0, -100)
+            turtle.dot(100, "white")
+
+            turtle.setpos(0, -200)
+            turtle.dot(100, TrafficLight.__color[2])
+            turtle.setpos(0, -220)
+            TrafficLight.clock(7)
+            turtle.setpos(0, -200)
+            turtle.dot(100, "white")
+            turtle.setpos(0, -100)
+
+            turtle.dot(100, TrafficLight.__color[1])
+            turtle.setpos(0, -120)
+            TrafficLight.clock(2)
+            turtle.setpos(0, -100)
+            turtle.dot(100, "white")
+            turtle.setpos(0, 0)
+
+        turtle.mainloop()
+
+
+Tr = TrafficLight()
+Tr.running()
