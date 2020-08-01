@@ -1,0 +1,33 @@
+from abc import ABC, abstractmethod
+
+
+class Textile(ABC):
+
+    def __init__(self, data):
+        self.data = data
+
+    @abstractmethod
+    def expenditure(self):
+        pass
+
+    def __add__(self, other):
+        return self.expenditure + other.expenditure
+
+
+class Coat(Textile):
+    @property
+    def expenditure(self):
+        print(f"Expenditure Coat: {round(self.data / 6.5 + 0.5)}")
+        return round(self.data / 6.5 + 0.5)
+
+
+class Costume(Textile):
+    @property
+    def expenditure(self):
+        print(f"Expenditure Costume: {round(self.data / 6.5 + 0.5)}")
+        return (2 * self.data + 0.3) / 100
+
+
+coat = Coat(43)
+costume = Costume(60)
+print(coat + costume)
