@@ -1,0 +1,28 @@
+class Error(Exception):
+    def __init__(self, text):
+        self.text = text
+        self.my_list = []
+
+    def my_input(self):
+
+        while True:
+            try:
+                val = input('Enter a positive number (exit - Stop)- ')
+                if val == 'stop' or val == 'Stop':
+
+                    return f'My list - {self.my_list} \nExit'
+                    break
+
+                else:
+                    if int(val) < 0:
+                        raise Error('Number negative')
+                    self.my_list.append(int(val))
+                    print(f'My list - {self.my_list} \n ')
+            except ValueError:
+                print(f"Invalid value - string or boolean")
+            except Error as err:
+                print(err)
+
+
+try_except = Error(1)
+print(try_except.my_input())
