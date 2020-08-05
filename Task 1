@@ -1,0 +1,67 @@
+class Data:
+    def __init__(self, data):
+        # self.day = day
+        # self.month = month
+        # self.year = year
+        self.data = str(data)
+
+    @classmethod
+    def extract(cls, data):
+        my_date = []
+
+        for i in data.split():
+            if i != '-': my_date.append(i)
+
+        return int(my_date[0]), int(my_date[1]), int(my_date[2])
+
+    @staticmethod
+    def valid(day, month, year):
+
+        if year % 4 == 0:
+            if month in (1, 3, 5, 7, 8, 10, 12):
+                if 1 <= day <= 31:
+                    return f'All right {day} {month} {year}'
+                else:
+                    return f"there is no such day {day} in {month} month"
+            elif month in (4, 6, 9, 11):
+                if 1 <= day <= 30:
+                    return f'All right {day} {month} {year}'
+                else:
+                    return f"there is no such day {day} in {month} month"
+            elif month == 2:
+                if 1 <= day <= 29:
+                    return f'All right {day} {month} {year}'
+                else:
+                    return f"there is no such day {day} in {month} month"
+            else:
+                return f"no such month {month}"
+        elif year % 4 != 0:
+            if month in (1, 3, 5, 7, 8, 10, 12):
+                if 1 <= day <= 31:
+                    return f'All right {day} {month} {year}'
+                else:
+                    return f"there is no such day {day} in {month} month"
+            elif month in (4, 6, 9, 11):
+                if 1 <= day <= 30:
+                    return f'All right {day} {month} {year}'
+                else:
+                    return f"there is no such day {day} in {month} month"
+            elif month == 2:
+                if 1 <= day <= 28:
+                    return f'All right {day} {month} {year}'
+                else:
+                    return f"there is no such day {day} in {month} month"
+            else:
+                return f"No such month {month}"
+
+    def __str__(self):
+        return f'Текущая дата {Data.extract(self.data)}'
+
+
+today = Data('11 - 1 - 2001')
+print(today)
+print(Data.valid(11, 11, 2022))
+print(today.valid(11, 13, 2011))
+print(Data.extract('11 - 11 - 2011'))
+print(today.extract('11 - 11 - 2020'))
+print(Data.valid(30, 4, 2020))
